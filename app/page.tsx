@@ -234,18 +234,21 @@ export default function Home() {
     setRelatedTopics([]);
 
     try {
-      const res = await fetch("http://localhost:5000/api/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          topic,
-          grade: selectedGrade,
-          subject: selectedSubject,
-          contentType: selectedContentType,
-          userRole,
-          language: language === "english" ? "English" : "Kiswahili",
-        }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/generate`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            topic,
+            grade: selectedGrade,
+            subject: selectedSubject,
+            contentType: selectedContentType,
+            userRole,
+            language: language === "english" ? "English" : "Kiswahili",
+          }),
+        }
+      );
 
       const data = await res.json();
       if (data.success && data.data) {
