@@ -413,8 +413,8 @@ export default function Home() {
       <div className="hidden md:fixed md:left-0 md:top-0 md:h-screen md:w-72 md:flex md:flex-col md:bg-white md:border-r md:border-gray-200 md:z-40 md:overflow-y-auto">
         {/* Sidebar Header */}
         <div className="p-4 border-b border-gray-200 flex items-center gap-2 sticky top-0 bg-white">
-          <div className="p-2 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg">
-            <Clock className="w-4 h-4 text-white" />
+          <div className="p-2">
+            <Clock className="w-4 h-4 text-blue-600" />
           </div>
           <h3 className="font-semibold text-sm text-gray-900">Study History</h3>
         </div>
@@ -490,7 +490,7 @@ export default function Home() {
             className="fixed inset-0 bg-black/30 md:hidden z-30 transition-opacity"
             onClick={() => setShowHistory(false)}
           />
-          <div className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 flex flex-col transition-all duration-300 z-40 md:hidden">
+          <div className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 flex flex-col transition-all duration-300 z-999 md:hidden">
             <div className="p-4 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-blue-600" />
@@ -561,9 +561,7 @@ export default function Home() {
               >
                 <ChevronRight className="w-5 h-5 text-gray-600" />
               </button>
-              <div className="p-2.5 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg shadow-md">
-                <BookOpen className="w-5 h-5 text-white" />
-              </div>
+              <img src="/favicon.png" alt="" className="h-8 md:h-14" />
               <div>
                 <h1 className="text-lg font-bold text-gray-900">
                   CBC Smart Study
@@ -738,7 +736,7 @@ export default function Home() {
                   <p className="text-sm font-semibold text-gray-600 mb-3">
                     Popular CBC topics:
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto">
                     {suggestedTopics.map((t) => (
                       <button
                         key={t}

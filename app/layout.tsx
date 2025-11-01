@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "CBC Smart Study",
+  icons: {
+    icon: "/favicon.png",
+  },
   description: "Created by Emmanuel",
 };
 
